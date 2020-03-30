@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d71779db-4b34-453b-99b6-9e03d4544fae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0002_create_homepage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0003_homepage_body.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0004_auto_20200317_2319.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0005_getintouch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0006_auto_20200330_1956.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/css/welcome_page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/pic01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/pic02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/js/skel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/js/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/home_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/welcome_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/templates/search/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/.idea/mysite.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/settings/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/settings/dev.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/settings/production.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/static/css/mysite.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/static/js/mysite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/wsgi.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZHBB4o55siiYWgz2NxYAY4ogab" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysite/templates/home" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d71779db-4b34-453b-99b6-9e03d4544fae" name="Default Changelist" comment="" />
+      <created>1584486000671</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584486000671</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
