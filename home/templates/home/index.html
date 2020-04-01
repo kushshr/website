@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>Projection by TEMPLATED</title>
+		<title>TOMPWG</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{% static 'css/main.css'%}"/>
@@ -102,8 +102,8 @@
 
 					<h3>Get in touch</h3>
 
-					<form action="#" method="post">
-
+					<form id = "contact_form" action = "/contact/" method = "POST">
+						{% csrf_token %}
 						<div class="field half first">
 							<label for="name">Name</label>
 							<input name="name" id="name" type="text" placeholder="Name">
@@ -117,7 +117,8 @@
 							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"></li>
+							<li><button class="button alt" type="submit" >Send Message</button></li>
+<!--							<li><input type="submit"> Submit</li>-->
 						</ul>
 					</form>
 
@@ -133,6 +134,42 @@
 			<script src="{% static 'js/skel.min.js'%}"></script>
 			<script src="{% static 'js/util.js'%}"></script>
 			<script src="{% static 'js/main.js'%}"></script>
+<!--			<script>contact_form.onsubmit = async (e) => {-->
+<!--					e.preventDefault();-->
+<!--					let response = await fetch('/contact/', {-->
+<!--					  method: 'POST',-->
+<!--					  body: new FormData(formElem)-->
+<!--					});-->
+<!--					let result = await response.json();-->
+<!--					alert(result.message);-->
+<!--				  };</script>-->
+<!--			<script>-->
+<!--				function contact()-->
+<!--				{-->
+<!--				var email = $('#email').val()-->
+<!--				var msg = $('#message').val()-->
+<!--				var name = $('#name').val()-->
+<!--				var jsonString = JSON.stringify({-->
+<!--				 "name": name,-->
+<!--				 "message": msg,-->
+<!--				 "email": email,-->
+<!--				 })-->
+
+<!--				$.ajax({-->
+<!--				 type: "POST",-->
+<!--				 url: "/contact/",-->
+<!--				 dataType: "json",-->
+<!--				 contentType: "application/json; charset=utf-8",-->
+<!--				 data: jsonString,-->
+<!--				 success: function (data) {-->
+<!--				 alert("Sent contact info.");-->
+<!--				 },-->
+<!--				 failure: function(error) {-->
+<!--				 alert("Failed.");-->
+<!--				 }-->
+<!--				 })-->
+<!-- 				}-->
+<!--			</script>-->
 
 	</body>
 </html>

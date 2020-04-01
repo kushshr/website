@@ -5,28 +5,7 @@ from wagtail.core.models import Page
 
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
-
-from django.utils import translation
-
-
-class TranslatedField(object):
-    def __init__(self, en_field, nl_field):
-        self.en_field = en_field
-        self.nl_field = nl_field
-
-    def __get__(self, instance, owner):
-        if translation.get_language() == 'nl':
-            field = getattr(instance, self.nl_field)
-            if field == None or field == '':
-                return getattr(instance, self.en_field)
-            else:
-                return field
-        else:
-            field = getattr(instance, self.en_field)
-            if field == None or field == '':
-                return getattr(instance, self.nl_field)
-            else:
-                return field
+from home.core.utils import *
 
 class HomePage(Page):
 
@@ -55,7 +34,6 @@ class HomePage(Page):
     # What We Do
     what_we_do_section_header_en = models.CharField(max_length=140, blank=True)
     what_we_do_section_header_nl = models.CharField(max_length=140, blank=True)
-
 
     # Translated fields
     translated_title = TranslatedField(
