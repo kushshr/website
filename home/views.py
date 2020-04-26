@@ -1,6 +1,7 @@
 from home.models import *
 from django.shortcuts import HttpResponse, render
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import redirect
 import json
 from django.contrib.auth import authenticate, login
 
@@ -28,6 +29,6 @@ def contact(request):
         except Exception as e:
             print (e)
 
-        return render(request, 'home/index.html', {"code":201, "message": "contact_list_updated"})
+        return HttpResponse(json.dumps(default_response(status={"code": 404, "message": "request_not_found"}, data={})))
 
     return HttpResponse(json.dumps(default_response(status={"code": 404, "message": "request_not_found"}, data={})))

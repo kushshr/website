@@ -11,26 +11,63 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{% static 'css/main.css'%}"/>
+		        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 	</head>
 	<body>
 
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="logo"><strong></strong> </a>
-					<nav id="nav">
-						<a href="index.html"></a>
-						<a href="generic.html"></a>
-						<a href="elements.html"></a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<!--			<header>-->
+		<section id="banner">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" id="navbarTop" style="opacity: .9;">
+				<a class="navbar-brand" href="#"><img src="{% static 'images/TOMP_WG_color.svg' %}" alt="logo" class="logo"/></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto navbar-right nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#three">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#footer">Contact</a>
+						</li>
+					</ul>
 				</div>
-			</header>
+			</nav>
+<!--				<div class="container">-->
+<!--					<div class = "inner-header">-->
+<!--						<a class="inner-brand" href="#"><img src="{% static 'images/wg_logo.png' %}" alt="logo" class="logo" /></a>-->
+<!--					</div>-->
+<!--&lt;!&ndash;				&ndash;&gt;-->
+<!--				<nav class="navbar navbar-default">-->
+<!--&lt;!&ndash;					<ul>&ndash;&gt;-->
+<!--						<a href="#">Home</a>-->
+<!--						<a href="#three">Middle</a>-->
+<!--						<a href="#footer">Get In Touch</a>-->
+<!--&lt;!&ndash;					</ul>&ndash;&gt;-->
+<!--				</nav>-->
+<!--				</div>-->
+<!--				<div class="inner">-->
+<!--					<a href="index.html" class="logo"><strong></strong> </a>-->
+<!--					<nav id="nav">-->
+<!--						<a href="index.html"></a>-->
+<!--						<a href="generic.html"></a>-->
+<!--						<a href="elements.html"></a>-->
+<!--					</nav>-->
+<!--					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>-->
+<!--				</div>-->
+<!--			</header>-->
 
 		<!-- Banner -->
-			<section id="banner">
+<!--			<section id="banner">-->
 
-				<div class="inner">
+				<div class="inner" >
 					<header>
 						<h1>{{page.title}}</h1>
 					</header>
@@ -44,21 +81,21 @@
 						</div>
 
 						<div>
-							<span class="icon fa-camera"></span>
+							<span class="icon fab fa-connectdevelop"></span>
 							<h3>MaaS Providers</h3>
 							<p>Class aptent taciti ad litora</p>
 						</div>
 
 						<div>
-							<span class="icon fa-bug"></span>
+							<i class="icon fas fa-building"></i>
 							<h3>Cities</h3>
 							<p>Nulla vitae mauris non felis</p>
 						</div>
 
 					</div>
 
-					<footer>
-						<a href="#" class="button">Get Started</a>
+				<footer>
+						<a href="#footer" class="button" style="margin-bottom:2em;">Get Started</a>
 					</footer>
 				</div>
 			</section>
@@ -77,7 +114,7 @@
 							</header>
 							<p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
 							<footer>
-								<a href="#" class="button">Learn More</a>
+								<a href="https://github.com/TOMP-WG/TOMP-API/wiki" target="_blank" class="button">Learn More</a>
 							</footer>
 						</article>
 						<article>
@@ -101,30 +138,137 @@
 				<div class="inner">
 
 					<h3>Get in touch</h3>
+					<p>Configurable</p>
 
-					<form id = "contact_form" action = "/contact/" method = "POST">
+					<form onsubmit="return check()" id = "contact_form" action = "/contact/" method = "POST">
 						{% csrf_token %}
 						<div class="field half first">
-							<label for="name">Name</label>
 							<input name="name" id="name" type="text" placeholder="Name">
 						</div>
 						<div class="field half">
-							<label for="email">Email</label>
 							<input name="email" id="email" type="email" placeholder="Email">
 						</div>
 						<div class="field">
-							<label for="message">Message</label>
+							<input name="org" id="organization" type = "text" placeholder="Organization">
+						</div>
+<!--						<div class="field align-left">-->
+<!--							<label for="dropdownMenuButton">Organization Type</label>-->
+<!--							<div class="dropdown">-->
+<!--							  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--								Select-->
+<!--							  </button>-->
+<!--							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--								<a class="dropdown-item" href="#">Transport Operator</a>-->
+<!--								<a class="dropdown-item" href="#">MaaS Operator</a>-->
+<!--								<a class="dropdown-item" href="#">City</a>-->
+<!--								<a class="dropdown-item" href="#">Government</a>-->
+
+<!--							  </div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						  <fieldset>-->
+
+<!--						<div class="row align-left">-->
+<!--						  <legend class="col-form-label col-sm-2 pt-0 align-left">Radios</legend>-->
+<!--						  <div class="col-sm-10 align-left">-->
+<!--							<div class="form-check">-->
+<!--							  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >-->
+<!--							  <label class="form-check-label" for="gridRadios1">-->
+<!--								First radio-->
+<!--							  </label>-->
+<!--							</div>-->
+<!--							<div class="form-check">-->
+<!--							  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
+<!--							  <label class="form-check-label" for="gridRadios2">-->
+<!--								Second radio-->
+<!--							  </label>-->
+<!--							</div>-->
+<!--							<div class="form-check">-->
+<!--							  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">-->
+<!--							  <label class="form-check-label" for="gridRadios3">-->
+<!--								Third disabled radio-->
+<!--							  </label>-->
+<!--							</div>-->
+<!--						  </div>-->
+<!--						</div>-->
+<!--						  </fieldset>-->
+
+						<div class="row" style="margin-bottom:1.5em;">
+							<div class="col-md-6 align-left">
+								<label>Organization Type</label>
+								<div class="form-check" style="padding-left: 0rem;">
+								  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="to" checked>
+								  <label class="form-check-label" for="exampleRadios1">
+									Transport Operator
+								  </label>
+								</div>
+								<div class="form-check" style="padding-left: 0rem;">
+								  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="mp">
+								  <label class="form-check-label" for="exampleRadios2">
+									Maas provider
+								  </label>
+								</div>
+								<div class="form-check" style="padding-left: 0rem;">
+								  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="city">
+								  <label class="form-check-label" for="exampleRadios3">
+									  City
+								  </label>
+								</div>
+								<div class="form-check" style="padding-left: 0rem;">
+								  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="govt">
+								  <label class="form-check-label" for="exampleRadios3">
+									Government
+								  </label>
+								</div>
+							</div>
+							<div class="col-md-6 align-left">
+								<label for="defaultCheck1" style="padding-left: 0.30rem;">Interested in</label>
+								<div class="form-check" style="padding-left: 0.35rem;">
+								  <input class="form-check-input" type="checkbox" value="tompapi" id="defaultCheck1" name="interestedIn">
+								  <label class="form-check-label" for="defaultCheck1">
+									TOMP API
+								  </label>
+								</div>
+								<div class="form-check" style="padding-left: 0.35rem;">
+								  <input class="form-check-input" type="checkbox" value="tompcds" id="defaultCheck2" name="interestedIn">
+								  <label class="form-check-label" for="defaultCheck2">
+									TOMP CDS
+								  </label>
+								</div>
+							</div>
+						</div>
+
+<!--						<div class="field align-left">-->
+<!--							<label for="defaultCheck1">Interested in</label>-->
+<!--							<div class="form-check">-->
+<!--							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">-->
+<!--							  <label class="form-check-label" for="defaultCheck1">-->
+<!--								Default checkbox-->
+<!--							  </label>-->
+<!--							</div>-->
+<!--							<div class="form-check">-->
+<!--							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">-->
+<!--							  <label class="form-check-label" for="defaultCheck2">-->
+<!--								Disabled checkbox-->
+<!--							  </label>-->
+<!--							</div>-->
+<!--						</div>-->
+						<div class="field">
 							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
+						<div style="text-align: center;margin-bottom:1.5em;">
+							<div class="g-recaptcha" data-sitekey="6LdQq-0UAAAAAF_Q1GN5NShboAItIa49UWzRJqqX" data-callback="recaptchaCallback" style="display: inline-block;"></div>
+						</div>
 						<ul class="actions">
-							<li><button class="button alt" type="submit" >Send Message</button></li>
+							<li><button class="button alt" type="submit" id="submitButton" disabled>Send Message</button></li>
 <!--							<li><input type="submit"> Submit</li>-->
 						</ul>
+
 					</form>
 
-					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
-					</div>
+<!--					<div class="copyright">-->
+<!--						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.-->
+<!--					</div>-->
 
 				</div>
 			</footer>
@@ -134,15 +278,61 @@
 			<script src="{% static 'js/skel.min.js'%}"></script>
 			<script src="{% static 'js/util.js'%}"></script>
 			<script src="{% static 'js/main.js'%}"></script>
-<!--			<script>contact_form.onsubmit = async (e) => {-->
-<!--					e.preventDefault();-->
-<!--					let response = await fetch('/contact/', {-->
-<!--					  method: 'POST',-->
-<!--					  body: new FormData(formElem)-->
-<!--					});-->
-<!--					let result = await response.json();-->
-<!--					alert(result.message);-->
-<!--				  };</script>-->
+			<script>
+				$(document).ready(function(){
+				   var scroll_start = 0;
+				   var startchange = $('#banner');
+				   var offset = startchange.offset();
+				   var bottom = $(window).height - offset.top - startchange.height();
+				   $(document).scroll(function() {
+					  scroll_start = $(this).scrollTop();
+					  if(scroll_start > 1) {
+						  $('#navbarTop').css('background-color', '#5d5d6c');
+					   } else {
+						  $('#navbarTop').css('background-color', 'transparent');
+					   }
+				   });
+				});
+
+				function recaptchaCallback(){
+					$('#submitButton').removeAttr('disabled');
+				}
+
+				function check(){
+					var email = $('#email').val()
+					var msg = $('#message').val()
+					var name = $('#name').val()
+					var org = $('#organization').val()
+					var organizationType = $("input[name='exampleRadios']:checked").val();
+					var interested = $("input[name='interestedIn']:checked").serialize();
+					console.log(interested)
+					if (name==""){
+						alert("Please fill in your name.");
+						return false;
+					}else if(email == ""){
+						alert("Please fill in your email.");
+						return false;
+					}else if(org == ""){
+						alert("Please fill in your organization name.");
+						return false;
+					}else if(interested==""){
+						alert("Please select your interests");
+						return false;
+					}
+					return true;
+				}
+			</script>
+<!--			<script>-->
+<!--			contact_form.onsubmit = async (e) => {-->
+<!--				e.preventDefault();-->
+<!--				let response = await fetch('/contact/', {-->
+<!--				  method: 'POST',-->
+<!--				  body: new FormData(formElem)-->
+<!--				});-->
+<!--				let result = await response.json();-->
+<!--				alert(result.message);-->
+<!--			  };-->
+<!--			</script>-->
 <!--			<script>-->
 <!--				function contact()-->
 <!--				{-->
@@ -170,6 +360,10 @@
 <!--				 })-->
 <!-- 				}-->
 <!--			</script>-->
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
 
 	</body>
 </html>
