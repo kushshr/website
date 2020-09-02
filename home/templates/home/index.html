@@ -77,19 +77,19 @@
 						<div>
 							<span class="icon fa-car"></span>
 							<h3>Travel Operators</h3>
-							<p>Suspendisse amet ullamco</p>
+							<p>{{page.travel_operators_subtitle}}</p>
 						</div>
 
 						<div>
 							<span class="icon fab fa-connectdevelop"></span>
 							<h3>MaaS Providers</h3>
-							<p>Class aptent taciti ad litora</p>
+							<p>{{page.maas_subtitle}}</p>
 						</div>
 
 						<div>
 							<i class="icon fas fa-building"></i>
 							<h3>Cities</h3>
-							<p>Nulla vitae mauris non felis</p>
+							<p>{{page.cities_subtitle}}</p>
 						</div>
 
 					</div>
@@ -112,7 +112,7 @@
 							<header>
 								<h3>TOMP-API</h3>
 							</header>
-							<p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
+							<p>{{page.tompapi_subtitle}}</p>
 							<footer>
 								<a href="https://github.com/TOMP-WG/TOMP-API/wiki" target="_blank" class="button">Learn More</a>
 							</footer>
@@ -124,7 +124,7 @@
 							<header>
 								<h3>TOMP-CDS</h3>
 							</header>
-							<p>Pellentesque fermentum dolor. Aliquam quam lectus<br />facilisis auctor, ultrices ut, elementum vulputate, nunc<br /> blandit ellenste egestagus commodo.</p>
+							<p>{{page.tompcds_subtitle}}</p>
 							<footer>
 								<a href="#" class="button">Learn More</a>
 							</footer>
@@ -138,7 +138,7 @@
 				<div class="inner">
 
 					<h3>Get in touch</h3>
-					<p>Configurable</p>
+					<p>{{page.get_in_touch}}</p>
 
 					<form onsubmit="return check()" id = "contact_form" action = "/contact/" method = "POST">
 						{% csrf_token %}

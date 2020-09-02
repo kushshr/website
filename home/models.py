@@ -26,39 +26,73 @@ class HomePage(Page):
         related_name='+'
     )
     title_nl = models.CharField(max_length=140, blank=True)
-    main_banner_body_en = RichTextField(blank=True)
-    main_banner_body_nl = RichTextField(blank=True)
-    main_banner_subtitle_en = models.CharField(max_length=255, blank=True)
-    main_banner_subtitle_nl = models.CharField(max_length=255, blank=True)
-
-    # What We Do
-    what_we_do_section_header_en = models.CharField(max_length=140, blank=True)
-    what_we_do_section_header_nl = models.CharField(max_length=140, blank=True)
+    travel_operators_subtitle_en = models.CharField(max_length=255, blank=True)
+    travel_operators_subtitle_nl = models.CharField(max_length=255, blank=True)
+    maas_subtitle_en = models.CharField(max_length=255, blank=True)
+    maas_subtitle_nl = models.CharField(max_length=255, blank=True)
+    cities_subtitle_en = models.CharField(max_length=140, blank=True)
+    cities_subtitle_nl = models.CharField(max_length=140, blank=True)
+    tompapi_subtitle_en = models.CharField(max_length=140, blank=True)
+    tompapi_subtitle_nl = models.CharField(max_length=140, blank=True)
+    tompcds_subtitle_en = models.CharField(max_length=140, blank=True)
+    tompcds_subtitle_nl = models.CharField(max_length=140, blank=True)
+    get_in_touch_en = models.CharField(max_length=140, blank=True)
+    get_in_touch_nl = models.CharField(max_length=140, blank=True)
 
     # Translated fields
-    translated_title = TranslatedField(
+    title = TranslatedField(
         'title',
         'title_nl',
     )
-    main_banner_body = TranslatedField(
-        'main_banner_body_en',
-        'main_banner_body_nl',
+
+    travel_operators_subtitle = TranslatedField(
+        'travel_operators_subtitle_en',
+        'travel_operators_subtitle_nl',
     )
-    main_banner_subtitle = TranslatedField(
-        'main_banner_subtitle_en',
-        'main_banner_subtitle_nl',
+
+    maas_subtitle = TranslatedField(
+        'maas_subtitle_en',
+        'maas_subtitle_nl',
     )
-    what_we_do_section_header = TranslatedField(
-        'what_we_do_section_header_en',
-        'what_we_do_section_header_nl',
+
+    cities_subtitle = TranslatedField(
+        'cities_subtitle_en',
+        'cities_subtitle_nl',
+    )
+
+    tompapi_subtitle = TranslatedField(
+        'tompapi_subtitle_en',
+        'tompapi_subtitle_nl'
+    )
+
+    tompcds_subtitle = TranslatedField(
+        'tompcds_subtitle_en',
+        'tompcds_subtitle_nl'
+    )
+
+    get_in_touch = TranslatedField(
+        'get_in_touch_en',
+        'get_in_touch_nl'
     )
 
     content_panels = Page.content_panels + [
         FieldPanel('title'),
-        FieldPanel('main_banner_body_en', classname="full"),
-        FieldPanel('main_banner_subtitle_en', classname="full"),
+        FieldPanel('title_nl'),
+        FieldPanel('travel_operators_subtitle_en', classname="full"),
+        FieldPanel('travel_operators_subtitle_nl', classname="full"),
+        FieldPanel('maas_subtitle_en', classname="full"),
+        FieldPanel('maas_subtitle_nl', classname="full"),
+        FieldPanel('cities_subtitle_en', classname="full"),
+        FieldPanel('cities_subtitle_nl', classname="full"),
+        FieldPanel('tompapi_subtitle_en', classname="full"),
+        FieldPanel('tompapi_subtitle_nl', classname="full"),
+        FieldPanel('tompcds_subtitle_en', classname="full"),
+        FieldPanel('tompcds_subtitle_nl', classname="full"),
+        FieldPanel('get_in_touch_en', classname="full"),
+        FieldPanel('get_in_touch_nl', classname="full"),
         # InlinePanel('related_links', label="Related links"),
     ]
+
 
 class Contacts(models.Model):
     name = models.TextField(default='',null=False)
