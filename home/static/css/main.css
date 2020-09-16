@@ -1773,7 +1773,7 @@
 	}
 
 	.inner {
-		max-width: 75em;
+		max-width: 100%;
 		margin: 0 auto;
 	}
 
@@ -3212,4 +3212,9 @@
 
 	.form-check{
 	    padding-top: 0.3em;
+	}
+
+	.col_padding{
+	    padding-left: 4%;
+	    padding-right: 4%;
 	}

@@ -1,5 +1,8 @@
 {% load static %}
-
+{% load wagtailimages_tags %}
+{% image page.main_banner_image fill-900x400 as img%}
+{% image page.tomp_api_image max-75x75 as img1%}
+{% image page.tomp_cds_image max-75x75 as img2%}
 <!--
 	Projection by TEMPLATED
 	templated.co @templatedco
@@ -20,7 +23,7 @@
 
 		<!-- Header -->
 <!--			<header>-->
-		<section id="banner">
+		<section id="banner"  style="background-image: url('{{ img.url }}');">
 			<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" id="navbarTop" style="opacity: .9;">
 				<a class="navbar-brand" href="#"><img src="{% static 'images/TOMP_WG_color.svg' %}" alt="logo" class="logo"/></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,21 +75,21 @@
 						<h1>{{page.title}}</h1>
 					</header>
 
-					<div class="flex ">
+					<div class="flex" >
 
-						<div>
+						<div class="col-4" style="padding-left: 4%;padding-right: 4%;">
 							<span class="icon fa-car"></span>
 							<h3>Travel Operators</h3>
 							<p>{{page.travel_operators_subtitle}}</p>
 						</div>
 
-						<div>
+						<div class="col-4" style="padding-left: 4%;padding-right: 4%;">
 							<span class="icon fab fa-connectdevelop"></span>
 							<h3>MaaS Providers</h3>
 							<p>{{page.maas_subtitle}}</p>
 						</div>
 
-						<div>
+						<div class="col-4" style="padding-left: 4%;padding-right: 4%;">
 							<i class="icon fas fa-building"></i>
 							<h3>Cities</h3>
 							<p>{{page.cities_subtitle}}</p>
@@ -106,8 +109,8 @@
 				<div class="inner">
 					<div class="flex flex-2">
 						<article>
-							<div class="image round">
-								<img src="{% static 'images/pic01.jpg' %}" alt="Pic 01" />
+							<div class="image">
+								<img src="{{ img1.url }}" alt="Pic 01" />
 							</div>
 							<header>
 								<h3>TOMP-API</h3>
@@ -118,15 +121,16 @@
 							</footer>
 						</article>
 						<article>
-							<div class="image round">
-								<img src="{% static 'images/pic02.jpg' %}" alt="Pic 02" />
+							<div class="image">
+								<img src="{{ img2.url }}" alt="Pic 02" />
+
 							</div>
 							<header>
 								<h3>TOMP-CDS</h3>
 							</header>
 							<p>{{page.tompcds_subtitle}}</p>
 							<footer>
-								<a href="#" class="button">Learn More</a>
+								<a href="https://github.com/TOMP-WG/TOMP-CDS-M" target="_blank" class="button">Learn More</a>
 							</footer>
 						</article>
 					</div>
@@ -135,7 +139,7 @@
 
 		<!-- Footer -->
 			<footer id="footer">
-				<div class="inner">
+				<div class="inner" style="padding-left: 4%;padding-right: 4%;">
 
 					<h3>Get in touch</h3>
 					<p>{{page.get_in_touch}}</p>
@@ -216,7 +220,7 @@
 								</div>
 								<div class="form-check" style="padding-left: 0rem;">
 								  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="govt">
-								  <label class="form-check-label" for="exampleRadios3">
+								  <label class="form-check-label" for="exampleRadios4">
 									Government
 								  </label>
 								</div>
@@ -257,7 +261,7 @@
 							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
 						<div style="text-align: center;margin-bottom:1.5em;">
-							<div class="g-recaptcha" data-sitekey="6LdrproZAAAAAJi5XFrZIiVSbQgcKIpYnDCwWm8n" data-callback="recaptchaCallback" style="display: inline-block;"></div>
+							<div class="g-recaptcha" data-sitekey="6LdQq-0UAAAAAF_Q1GN5NShboAItIa49UWzRJqqX" data-callback="recaptchaCallback" style="display: inline-block;"></div>
 						</div>
 						<ul class="actions">
 							<li><button class="button alt" type="submit" id="submitButton" disabled>Send Message</button></li>
@@ -297,6 +301,8 @@
 				function recaptchaCallback(){
 					$('#submitButton').removeAttr('disabled');
 				}
+
+
 
 				function check(){
 					var email = $('#email').val()

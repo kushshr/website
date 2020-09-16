@@ -5,6 +5,7 @@ from wagtail.core.models import Page
 
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 from home.core.utils import *
 
 class HomePage(Page):
@@ -25,6 +26,21 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    tomp_api_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    tomp_cds_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
     title_nl = models.CharField(max_length=140, blank=True)
     travel_operators_subtitle_en = models.CharField(max_length=255, blank=True)
     travel_operators_subtitle_nl = models.CharField(max_length=255, blank=True)
@@ -90,7 +106,9 @@ class HomePage(Page):
         FieldPanel('tompcds_subtitle_nl', classname="full"),
         FieldPanel('get_in_touch_en', classname="full"),
         FieldPanel('get_in_touch_nl', classname="full"),
-        # InlinePanel('related_links', label="Related links"),
+        ImageChooserPanel('main_banner_image', classname="full"),
+        ImageChooserPanel('tomp_api_image', classname="full"),
+        ImageChooserPanel('tomp_cds_image', classname="full")
     ]
 
 
