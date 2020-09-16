@@ -29,6 +29,6 @@ def contact(request):
         except Exception as e:
             print (e)
 
-        return HttpResponse(json.dumps(default_response(status={"code": 404, "message": "request_not_found"}, data={})))
+        return render(request, 'home/index.html', {"code": 201, "message": "Done"})
 
-    return HttpResponse(json.dumps(default_response(status={"code": 404, "message": "request_not_found"}, data={})))
+    return HttpResponse(json.dumps(default_response(status={"code": 404, "message": "method_not_allowed"}, data={})))
