@@ -1,7 +1,9 @@
 from django.db import models
 
 from wagtail.core.models import Page
-
+from wagtail.core.fields import StreamField
+from wagtail.core import blocks
+import datetime
 
 from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
@@ -110,7 +112,27 @@ class HomePage(Page):
         ImageChooserPanel('tomp_api_image', classname="full"),
         ImageChooserPanel('tomp_cds_image', classname="full")
     ]
+    def get_context(self, request, *args, **kwargs):
+        context = super(HomePage, self).get_context(request)
+        context['posts'] = Sections.objects.live().public().order_by('-created_at')
+        return context
 
+class Sections(Page):
+    section_title = models.CharField(max_length=140, blank=True)
+    content = StreamField(
+        [
+            ('heading', blocks.CharBlock(classname="full title")),
+            ('paragraph', blocks.RichTextBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+    created_at = models.DateTimeField(default=datetime.datetime.now(), null=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('section_title'),
+        StreamFieldPanel('content'),
+    ]
 
 class Contacts(models.Model):
     name = models.TextField(default='',null=False)
