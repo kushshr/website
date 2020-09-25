@@ -6,7 +6,7 @@ from wagtail.core import blocks
 import datetime
 
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from home.core.utils import *
 
