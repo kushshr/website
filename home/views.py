@@ -34,9 +34,9 @@ def contact(request):
             contact.message = message
             contact.save()
 
-            mail_message_body = name + """(""" + email + """) """ + """has requeted to get in touch with the TOMP Working Group. Here's their message: """ + message
+            mail_message_body = str(name) + """(""" + str(email) + """) """ + """has requeted to get in touch with the TOMP Working Group. Here's their message: """ + str(message)
 
-            send_email("kushagra.sharma@radiuz.nl", "", "Contact Request", mail_message_body)
+            send_email("", "", "Contact Request", mail_message_body)
             
         except Exception as e:
             print (e)
@@ -50,7 +50,7 @@ def send_email(recipient, cc, subject, message):
     tz = pytz.timezone("Europe/Amsterdam")
 
     username = "kushagrasharma.ece09@gmail.com"
-    password = "significance.be!"
+    password = ""
 
     msg = MIMEMultipart()
     msg['From'] = "kushagrasharma.ece09@gmail.com"
